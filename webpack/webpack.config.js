@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
-let devMode = true;
+let devMode = false;
 
 const filename = (name, ext) => devMode ? `${name}.${ext}` : `[contenthash]_${name}.${ext}`
 
@@ -30,7 +30,7 @@ module.exports = {
             }), //in production mode automatically minified
             new CopyPlugin({
                 patterns: [
-                  { from: "assets", to: "./assets/" },
+                  { from: "assets", to: `assets/${filename(`[name]`,`[ext]`)}` },//from src/assets to dist/assets
                 //   { from: "", to: "" },
                 //   { from: "", to: "" },
                 ],
