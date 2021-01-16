@@ -6,17 +6,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 
-let devMode = false;
+let devMode = true;
 const filename = (name, ext) => devMode ? `${name}.${ext}` : `[contenthash]_${name}.${ext}`
 
 module.exports = {
-    // mode: 'development', 
-    mode: 'production',
+    mode: 'development', 
+    // mode: 'production',
     context: path.resolve(__dirname, 'src'),
     entry: ['./script.js'],
     output: {
-        filename: filename('script', 'js',),
-        path: path.resolve(__dirname, 'dist')
+        filename: filename(`[name]`, 'js',),
+        chunkFilename: filename(`[name]`, 'js',),
+        path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
         extensions: ['.mjs', '.js', '.jsx', '.ts', '.json'],
@@ -25,6 +26,11 @@ module.exports = {
         //   : path.resolve(__dirname, ''),
         //   : path.resolve(__dirname, ''),
         }
+      },
+      devServer: {
+        contentBase: './dist',
+        port: 8080,
+        hot: true,
       },
 
         plugins: [
@@ -56,6 +62,15 @@ module.exports = {
           },
           optimization: {
             splitChunks: {chunks: 'all'},
+            // splitChunks: {
+            //     cacheGroups: {
+            //       commons: {
+            //         test: /[\\/]node_modules[\\/]/,
+            //         name: 'vendors',
+            //         chunks: 'all'
+            //       }
+            //     }
+            //   },
             minimize: devMode ? false : true,
             minimizer: [
               // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
