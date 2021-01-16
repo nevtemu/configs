@@ -4,6 +4,8 @@ My templates for bundler/builder config files
     
 
 ## Webpack
+In development mode files not minimized and simple names.    
+In production mode files minimized and names with contenthash.    
 
 #### Packages:
 - [webpack](https://webpack.js.org/ "Webpack") and [webpack-cli](https://www.npmjs.com/package/webpack-cli "Webpack CLI") 
