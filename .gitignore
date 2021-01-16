@@ -1,6 +1,9 @@
 # node modules
 webpack/node_modules
+gulp/node_modules
 # placeholder folders
 webpack/src
 webpack/dist
+gulp/src
+gulp/dist
 

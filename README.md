@@ -34,3 +34,11 @@ Full list of dependencies in package.json
 
     
 ## Gulp
+
+#### Packages:
+- [gulp](https://gulpjs.com/docs/en/getting-started/quick-start "Gulp") and [gulp-cli](https://www.npmjs.com/package/gulp-cli "Gulp CLI") 
+- 
+
+#### Plugins:
+- [gulp-rename](https://www.npmjs.com/package/gulp-rename "Gulp rename") to rename files easily.
+- 
