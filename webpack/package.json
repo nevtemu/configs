@@ -1,0 +1,21 @@
+{
+  "name": "webpack-config",
+  "version": "1.0.0",
+  "description": "My webpack config",
+  "main": "webpack.config.js",
+  "scripts": {
+    "webpack":".\/node_modules/.bin/webpack"
+  },
+  "keywords": [
+    "webpack",
+    "config"
+  ],
+  "author": "Artem Soroka <artem.soroka@hotmail.com>",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.1",
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1"
+  }
+}
